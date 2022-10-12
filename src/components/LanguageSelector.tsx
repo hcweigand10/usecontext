@@ -9,7 +9,7 @@ const LanguageSelector = () => {
         <Box p="8px">
              <h3>Select a Language</h3>
              <RadioGroup onChange={setLanguage} value={language}>
-                <Stack >
+                <Stack direction="row">
                     <Radio value="english">English</Radio>
                     <Radio value="dutch">Dutch</Radio>
                 </Stack>
