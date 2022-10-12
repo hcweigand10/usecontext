@@ -1,14 +1,18 @@
-import React, {useState} from 'react'
+import React, {FunctionComponent, useState} from 'react'
 
 import { Box, Radio, RadioGroup, Stack } from '@chakra-ui/react'
 
-const LanguageSelector = () => {
-    const [language, setLanguage] = useState("english")
+interface selectorProps{
+    handleChange: (nextValue: string) => void,
+    language: string
+  }
+
+const LanguageSelector: FunctionComponent<selectorProps> = ({handleChange, language}) => {
 
     return (
         <Box p="8px">
              <h3>Select a Language</h3>
-             <RadioGroup onChange={setLanguage} value={language}>
+             <RadioGroup onChange={handleChange} value={language}>
                 <Stack direction="row">
                     <Radio value="english">English</Radio>
                     <Radio value="dutch">Dutch</Radio>
